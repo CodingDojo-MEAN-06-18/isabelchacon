@@ -25,7 +25,7 @@ app.get('/', function(request, response) {
 });
 
 app.post('/double', function(request, response) {
-    request.session.counter += 1;
+    request.session.counter ++;
     response.redirect('/');
 })
 
