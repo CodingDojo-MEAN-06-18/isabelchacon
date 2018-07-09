@@ -14,10 +14,11 @@ const server = app.listen(port, () => console.log(`Listening on port ${ port }`)
 const io = require('socket.io')(server);
 
 var messages = [];
-
+var users = {};
 io.on('connection', function (socket) {
 
     socket.on('new_user', function(name){
+        users[socket.id]=name;
         var message = name +' has joined the chat!';
         socket.broadcast.emit('user_joined', message);
         socket.emit('messages', messages);
@@ -28,6 +29,11 @@ io.on('connection', function (socket) {
         io.emit('update_message', data);
     });
     
+    socket.on('disconnect', function(){
+        var message = users[socket.id]+" has disconnected!";
+        socket.broadcast.emit('user_joined', message);
+        delete users[socket.id];
+    });
 });
 
 app.get('/', function(request, response) {
