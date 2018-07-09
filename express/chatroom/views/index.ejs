@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Room</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script>
+        $(document).ready(function(){
+
+            var socket = io.connect();
+            while(!user){
+                var user = prompt("What is your name?");
+            }
+            socket.emit('new_user', user);
+            socket.on('messages', function (messages){
+
+                for (element in messages){
+                    $('#messages').append('<p>'+messages[element].user+' says: '+messages[element].message+'</p>');
+                }
+
+                $('#submit').click(function(){
+                var text = $('#msg').val();
+                if(text){
+                    var data = {'user':user, 'message':text};
+                    socket.emit('new_message', data);
+                    $('#msg').val("");
+                }
+                });
+            });
+
+            socket.on('user_joined', function(message){
+                $('#messages').append('<p class="red">'+message+'</p>');
+            });
+
+            socket.on('update_message', function(data){
+                $('#messages').append('<p>'+data.user+' says: '+data.message+'</p>');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <article>
+        <h1>The best ultra secret chat room in the world</h1>
+        <div id="messages"></div>
+        <label for="message">Send a message:</label>
+        <input type="text" name="message" id="msg" placeholder="Type your message here...">
+        <p id="submit">Submit</p>
+    </article>
+</body>
+</html>
