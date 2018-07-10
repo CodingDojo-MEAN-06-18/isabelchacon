@@ -1,26 +1,26 @@
 const myNum: number = 5;
 const myString: string = "Hello Universe";
 const myArr: number[] = [1,2,3,4];
-let myObj: object = { name:'Bill'};
+let myObj: { [key: string]: (string | number) } = { name:'Bill'};
 let anythingVariable: any = "Hey";
 anythingVariable = 25; 
-const arrayOne = [true, false, true, true]; 
-const arrayTwo = [1, 'abc', true, 2];
+const arrayOne: boolean[] = [true, false, true, true]; 
+const arrayTwo: (number | string | boolean)[] = [1, 'abc', true, 2];
 myObj = { x: 5, y: 10 };
 // object constructor
 
 class MyNode{
     val: number;
-    _priv: number;
+    private _priv: number;
 
-    constructor(val){
+    constructor(val: number){
         this.val = 0,
         this.val = val;
     }
 
-    doSomething(){
+    doSomething(): void{
         this._priv = 10;
-        return this;
+        return;
     }
 }
 const myNodeInstance = new MyNode(1);
@@ -28,6 +28,7 @@ console.log(myNodeInstance.val);
 
 function myFunction(): void {
     console.log("Hello World");
+    return;
 }
 
 function sendingErrors(): never {
