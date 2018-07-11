@@ -10,20 +10,15 @@ myObj = { x: 5, y: 10 };
 // object constructor
 
 class MyNode{
-    val: number;
     private _priv: number;
 
-    constructor(val: number){
-        this.val = 0,
-        this.val = val;
-    }
+    constructor(public val: number){}
 
     doSomething(): void{
         this._priv = 10;
-        return;
     }
 }
-const myNodeInstance = new MyNode(1);
+const myNodeInstance: MyNode = new MyNode(1);
 console.log(myNodeInstance.val);
 
 function myFunction(): void {
@@ -34,4 +29,3 @@ function myFunction(): void {
 function sendingErrors(): never {
 	throw new Error('Error message');
 }
-
