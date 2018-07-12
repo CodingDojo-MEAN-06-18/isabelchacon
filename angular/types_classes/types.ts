@@ -23,7 +23,7 @@ console.log(myNodeInstance.val);
 
 function myFunction(): void {
     console.log("Hello World");
-    return;
+    return; 
 }
 
 function sendingErrors(): never {
