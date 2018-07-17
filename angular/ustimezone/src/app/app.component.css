@@ -1,0 +1,12 @@
+.timezone, .clear{
+    display: inline-block;
+    width: 50px;
+    line-height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.clear {
+    width: 80px;
+}
