@@ -4,9 +4,10 @@
     {{ title }}
   </h1>
 </div>
-<div class="timezone">PST</div>
-<div class="timezone">MST</div>
-<div class="timezone">CST</div>
-<div class="timezone">EST</div>
-<div class="clear">Clear</div>
-<p id="date">this will be the date</p>
+<div (click)="getDate('PST')" [ngClass]="{selected: selectedzone === 'PST', timezone: true}">PST</div>
+<div (click)="getDate('MST')" [ngClass]="{selected: selectedzone === 'MST', timezone: true}">MST</div>
+<div (click)="getDate('CST')" [ngClass]="{selected: selectedzone === 'CST', timezone: true}">CST</div>
+<div (click)="getDate('EST')" [ngClass]="{selected: selectedzone === 'EST', timezone: true}">EST</div>
+<div (click)="clear()" class="timezone">Clear</div>
+
+<p>{{time | date:'medium'}}</p>

@@ -10,3 +10,7 @@
 .clear {
     width: 80px;
 }
+
+.selected {
+    background-color: yellow;
+}

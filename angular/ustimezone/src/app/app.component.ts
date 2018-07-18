@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'US Time Zone Display';
+  time = null;
+  selectedzone = null;
+
+  getDate(zone){
+    this.time = new Date();
+    if (zone === "MST"){
+      this.time.setHours(this.time.getHours() + 1);
+    }
+    else if (zone === "CST"){
+      this.time.setHours(this.time.getHours() + 2);
+    }
+    else if (zone === "EST"){
+      this.time.setHours(this.time.getHours() + 3);
+    }
+    this.selectedzone = zone;
+  }
+
+  clear(){
+    this.time=null;
+    this.selectedzone = null;
+  }
 }
