@@ -1,0 +1,7 @@
+<div id="wrapper">
+  <h1>{{title}}</h1>
+  <div *ngFor = "let switch of switches, let i = index" class="element">
+    <p *ngIf="switch" class="on" (click)="off(i)">ON</p>
+    <p *ngIf="!switch" class="off" (click)="on(i)">OFF</p>
+  </div>
+</div>
