@@ -1,0 +1,61 @@
+<h1>Registration</h1>
+<fieldset>
+  <legend>Enter your information:</legend>
+  <form (submit)="onSubmit(userdata)" #userdata='ngForm'>
+    <div>
+      <span>*First Name: </span>
+      <input type="text" name="firstname" [(ngModel)]='user.firstname' #firstname='ngModel' required> 
+      <span *ngIf="firstname.touched && firstname.errors" class="error">Error: First Name is Required</span>
+    </div>
+    <div>
+      <span>*Last Name: </span>
+      <input type="text" name="lastname" [(ngModel)]='user.lastname' #lastname='ngModel' required>
+      <span *ngIf="lastname.touched && lastname.errors" class="error">Error: Last Name is Required</span>
+    </div>
+    <div>
+      <span>*Email: </span>
+      <input type="email" name="email" [(ngModel)]='user.email' #email='ngModel' [pattern]="emailPattern" required>
+      <span *ngIf="email.touched && email.errors" class="error">Error: Valid Email is Required</span>
+    </div>
+    <div>
+      <span>*Password: </span>
+      <input type="password" name="password" [(ngModel)]='user.password' minlength="16" #password='ngModel' required>
+      <span *ngIf="password.touched && password.errors" class="error">Error: Password must be at least 16 characters</span>
+    </div>
+    <div>
+      <span>*Password confirmation: </span>
+      <input type="password" name="passconf" [(ngModel)]='user.passconf' #passconf='ngModel' required>
+      <span *ngIf="passconf.touched && (passconf.value !== user.password)" class="error">Error: Passwords must match</span>
+    </div>
+    <div>
+      <span>*Street Address: </span>
+      <input type="text" name="address" [(ngModel)]='user.address' #address='ngModel' required>
+      <span *ngIf="address.touched && address.errors" class="error">Error: Address is required</span>
+    </div>
+    <div>
+      <span>Unit/Apt #:</span>
+      <input type="text" name="unit" [(ngModel)]='user.unit' #unit='ngModel'>
+    </div>
+    <div>
+        <span>*City: </span>
+        <input type="text" name="city" [(ngModel)]='user.city' #city='ngModel' required>
+        <span *ngIf="city.touched && city.errors" class="error">Error: City is required</span>
+    </div>
+    <div>
+      <span>Select State: </span>
+      <select name="state" [(ngModel)]='user.state' #state='ngModel' required>
+          <option>State 1</option>
+          <option>State 2</option>
+          <option>State 3</option>
+        </select>
+    </div>
+    <div>
+      <span>I'm feeling lucky: </span>
+      <label for="yes">Yes</label>
+      <input type="radio" name="lucky" value="1" id="yes" [(ngModel)]='user.lucky' #lucky='ngModel'>
+      <label for="no">No</label>
+      <input type="radio" id="no" name="lucky" value="2" [(ngModel)]='user.lucky' #lucky='ngModel'>
+    </div>
+    <input type="submit" value="Register" [disabled]="userdata.invalid">
+  </form>
+</fieldset>

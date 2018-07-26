@@ -1,0 +1,25 @@
+form div {
+    text-align: right;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: inline-block;
+    vertical-align: top;
+}
+
+input, select {
+    display: inline-block;
+    width: 150px;
+}
+
+.error {
+    position: absolute;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#yes, #no{
+    width: 50px;
+}
