@@ -1,0 +1,22 @@
+#formcomponent{
+    width: 440px;
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+}
+
+textarea {
+    margin-bottom: 20px;
+}
+
+#submit {
+    display: block;
+    margin: 20px 0 auto auto;
+}
+
+#errors{
+    display: inline-block;
+    color: red;
+    vertical-align: top;
+    margin-left: 20px;
+}
