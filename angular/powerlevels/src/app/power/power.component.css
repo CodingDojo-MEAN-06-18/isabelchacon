@@ -1,0 +1,12 @@
+fieldset {
+    padding: 2%;
+  }
+  form {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+  }
+  img {
+    width: 20%;
+    display: inline-block;
+  }

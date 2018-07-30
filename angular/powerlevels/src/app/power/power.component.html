@@ -1,3 +1,21 @@
-<p>
-  power works!
-</p>
+<fieldset class="container" id="main-power">
+	<legend>PowerComponent</legend>
+	<form (submit) = "onSubmit(formData)" #formData="ngForm">
+	  Initial Power Level <input 
+		type="number"
+		name="initialPower"
+		min="1"
+		max="100"
+		[ngModel]='initialPower'
+		required
+	  >
+	  <input type="submit" value="Calculate Powers">
+	</form>
+	<img src="../../assets/images/goku.jpg" alt="">
+	<app-human [currentPower]='initialPower'></app-human>
+	<app-saiyan [currentPower]='initialPower'></app-saiyan>
+	<app-super-saiyan [currentPower]='initialPower'></app-super-saiyan>
+	<app-super-saiyan-two [currentPower]='initialPower'></app-super-saiyan-two>
+	<app-super-saiyan-three [currentPower]='initialPower'></app-super-saiyan-three>
+	<app-super-saiyan-four [currentPower]='initialPower'></app-super-saiyan-four>
+  </fieldset>

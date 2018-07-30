@@ -1,0 +1,7 @@
+.human-component {
+  width: 28%;
+  padding: 2%;
+  display: inline-block;
+  vertical-align: top;
+  height: 100px;
+}
