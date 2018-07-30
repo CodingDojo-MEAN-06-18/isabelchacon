@@ -1,0 +1,23 @@
+.quote{
+    border: 1px solid black;
+    width: 700px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.quotecontent{
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    font-size: 70%;
+}
+
+.quotevotes{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.button{
+    margin-right: 10px;
+}

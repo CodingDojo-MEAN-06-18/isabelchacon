@@ -1,0 +1,13 @@
+<div class="quote">
+  <div class="quotecontent">
+    <p>"{{quote.content}}"</p>
+    <p><em>- {{quote.author}}</em></p>
+  </div>
+  <div class="quotevotes">
+    <p *ngIf='quote.votes > 0'id="votes">+{{quote.votes}}</p>
+    <p *ngIf='quote.votes <= 0'id="votes">{{quote.votes}}</p>
+    <input type="button" value="Vote Up" class="button" (click)="voteup(quote)">
+    <input type="button" value="Vote Down" class="button" (click)="votedown(quote)">
+    <input type="button" value="Delete" class="button" (click)="delete(quote)">
+  </div>
+</div>

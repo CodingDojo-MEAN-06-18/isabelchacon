@@ -1,0 +1,2 @@
+<h1>Quotes List</h1>
+<app-quo *ngFor = "let quote of quoteArr | orderBy : 'votes'" [quote]='quote' (deletequote)="handleDelete($event)" (updatequote)="handleUpdate()" ></app-quo>
