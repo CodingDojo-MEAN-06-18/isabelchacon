@@ -1,0 +1,3 @@
+<footer>
+  <p *ngFor='let message of messages' [ngClass]="{'red': message[0]=='L'}">{{ message }}</p>
+</footer>
