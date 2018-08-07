@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#displayScore, #formDiv{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    padding: 20px;
+    text-align: left;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.msg {
+    font-size: 120%;
+}
+
+.red {
+    color: red;
+}
+
+.orange{
+    color: orange;
+}
+
+.blue {
+    color: blue;
+}
+
+#submit {
+    display: block;
+    margin-top: 20px;
+}
