@@ -1,0 +1,13 @@
+<div *ngIf='tie' id="tie" class="element">
+    <img src="../assets/img/tie.svg" alt="tie">
+</div>
+<article>
+    <section>
+        <h1>{{planet.name}}</h1>
+        <p><span>Climate: </span>{{planet.climate}}</p>
+        <p><span>Terrain: </span> {{planet.terrain}}</p>
+        <p><span>Population: </span> {{planet.population}}</p>
+        <p><span>Gravity:</span> {{planet.gravity}}</p>
+    </section>
+    <img src="{{pictureURL}}" alt="Planet">
+</article>

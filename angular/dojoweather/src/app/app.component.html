@@ -1,0 +1,17 @@
+<div id="maincomponent">
+  <header>
+    <h1>Star Wars Encyclopedia Galactica</h1>
+    <ul>
+      <li><a [routerLink]="['tatooine']">TATOOINE</a></li>
+      <li><a [routerLink]="['alderaan']">ALDERAAN</a></li>
+      <li><a [routerLink]="['yavin']">YAVIN IV</a></li>
+      <li><a [routerLink]="['hoth']">HOTH</a></li>
+      <li><a [routerLink]="['dagobah']">DAGOBAH</a></li>
+      <li><a [routerLink]="['endor']">ENDOR</a></li>
+    </ul>
+  </header>
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+</div>
+

@@ -1,0 +1,58 @@
+article {
+    font-family: "Open Sans Condensed", sans-serif;
+    border: 1px solid white;
+    padding: 40px 20px;
+    width: 920px;
+    margin: 0 auto;
+}
+
+section {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: "Orbitron";
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+}
+
+img {
+    width: 300px;
+}
+
+
+.element {
+    position: absolute;   
+    animation: 
+       1s nudge ease-out alternate forwards;
+}
+  
+.element img{
+    width: 100px;
+}
+  
+@keyframes nudge {
+    0% {
+      transform: translate(0px, 30px);
+    }
+    
+    100% {
+      transform: translate(400px, 30px);
+    }  
+}
+  

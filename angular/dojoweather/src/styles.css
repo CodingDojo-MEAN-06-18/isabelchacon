@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Bungee+Inline|Orbitron|Open+Sans+Condensed:300');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:#1b1b1b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 1020px;
+    background-image: url('./assets/img/bg.jpg');
+}
+
+
