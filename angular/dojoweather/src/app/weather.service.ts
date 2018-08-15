@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
@@ -27,16 +27,16 @@ export class WeatherService {
                     endor: 7
   }
 
-  planetInfo: BehaviorSubject<any> = new BehaviorSubject(this.planet);
+  //planetInfo: BehaviorSubject<any> = new BehaviorSubject(this.planet);
 
   constructor(private http: HttpClient) {
    }
 
 
-  fetchData(newlocation){
+  fetchData(newlocation):Observable<Planet>{
     const locationURL = this.planetIdx[newlocation];
-    return this.http.get(`${this.starwarsAPI}/planets/${locationURL}`).toPromise()
-      .then((planet) => {
+    return this.http.get<Planet>(`${this.starwarsAPI}/planets/${locationURL}`)
+/*       .then((planet) => {
         const newPlanet = {
           name : planet['name'],
           climate : planet['climate'],
@@ -47,6 +47,14 @@ export class WeatherService {
         this.planetInfo.next(newPlanet);})
       .catch((err) => {
         this.planetInfo.next(err);
-      });
+      });  */
   }
+}
+
+interface Planet{
+  name : string;
+  climate : string;
+  terrain : string;
+  population : string;
+  gravity: string;
 }
