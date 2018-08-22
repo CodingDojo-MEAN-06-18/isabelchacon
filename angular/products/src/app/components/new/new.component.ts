@@ -19,7 +19,7 @@ export class NewComponent implements OnInit {
 
   onSubmit(){
     this.productservice.newproduct(this.product).subscribe(
-      (product) => {this.router.navigateByUrl('/products/list');}
+      (product) => {this.router.navigateByUrl('/products');}
     );
   }
 

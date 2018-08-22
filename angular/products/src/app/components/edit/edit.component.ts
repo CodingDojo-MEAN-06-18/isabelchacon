@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
 
   onUpdate(){
     this.productservice.update(this.product).subscribe(
-      (product) => {this.router.navigateByUrl('/products/list');}
+      (product) => {this.router.navigateByUrl('/products');}
     );
   }
 

@@ -13,13 +13,13 @@ export class ProductService {
     id: "1",
     title: "My Camera",
     price: 780.99,
-    url: ''
+    url: 'https://static.bhphoto.com/images/images500x500/canon_1263c005_eos_80d_dslr_camera_1455767513000_1225876.jpg'
   },
   {
     id: "2",
     title: "My Dog",
     price: 18000000000,
-    url: ''
+    url: 'https://static.boredpanda.com/blog/wp-content/uploads/2017/09/funny-dog-thoughts-tweets-1.jpg'
   }];
 
   products: BehaviorSubject <any[]> = new BehaviorSubject(this.productList);
