@@ -19,12 +19,12 @@ export class QuoComponent implements OnInit {
 
   voteup(quote){
     quote.votes ++;
-    this.updatequote.emit();
+    //this.updatequote.emit();
   }
 
   votedown(quote){
     quote.votes --;
-    this.updatequote.emit();
+    //this.updatequote.emit();
   }
 
   delete(quote){
