@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable} from 'Rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { Product } from './models/Product';
 
@@ -32,21 +32,24 @@ export class ProductService {
     return this.products;
   }
 
-  fetchProduct(id){
-    const product = this.productList.filter(product => product.id == id);
-    return product;
+  fetchProduct(id): Observable<Product>{
+    const product = this.productList.find(product => product.id == id);
+    return of(product);
+    //from promises => observable
   }
 
   update(newproduct): Observable <Product[]>{
-    const idx = this.productList.findIndex(product => product.id == newproduct.id);
-    this.productList[idx]=newproduct;
+    this.productList = [
+      ...this.productList.filter(product => product.id !== newproduct.id),
+        newproduct
+    ];
     this.products.next(this.productList);
     return this.products;
   }
 
   newproduct(product): Observable <Product[]> {
     product.id = uuidv4();
-    this.productList.push(product);
+    this.productList = [...this.productList, product];
     this.products.next(this.productList);
     return this.products;
   }

@@ -24,8 +24,8 @@ export class EditComponent implements OnInit {
       tap(id => this.productid = id),
       switchMap(id => this.productservice.fetchProduct(id)))
     .subscribe(
-        (Product) => {
-          this.product = Product;
+        (product) => {
+          this.product = product;
         }
     );
   }
